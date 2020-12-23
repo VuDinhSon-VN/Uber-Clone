@@ -10,23 +10,18 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _MainPageState extends State<MainPage> with TickerProviderStateMixin{
+
+  GlobalKey<ScaffoldState> scaffoldKey = new Global<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Main Page'),
-      ),
-      body: MaterialButton(
-        onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(context, LoginPage.id, (route) => false);
-        },
-        height: 50,
-        minWidth: 300,
-        color: Colors.blue,
 
-        child: Text('Test Connection'),
-      ),
+    createMarker();
+
+    return Scaffold(
+      key: scaffoldKey,
+      drawer: container
     );
   }
 }

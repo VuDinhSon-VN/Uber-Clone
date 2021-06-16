@@ -47,15 +47,17 @@ void login() async{
   if(user != null){
     // verify login
     print( "get user");
-    DatabaseReference userRef = FirebaseDatabase.instance.reference().child('users/${user.uid}');
+    DatabaseReference userRef = FirebaseDatabase.instance.reference().child('drivers/${user.uid}');
     userRef.once().then((DataSnapshot snapshot) {
       print( snapshot.value);
       if(snapshot.value != null){
         print( "!snapshot.value");
         Navigator.pushNamedAndRemoveUntil(context, MainPage.id, (route) => false);
       }
-      else
+      else{
           print( snapshot.value);
+          Navigator.pop(context);
+      }
 
     });
 

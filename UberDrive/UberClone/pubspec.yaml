@@ -43,6 +43,10 @@ dependencies:
   animated_text_kit: ^2.1.0
   flutter_geofire: ^1.0.3
   firebase_messaging: ^6.0.16
+  toast: ^0.1.5
+  maps_toolkit: ^1.1.0+1
+  intl: ^0.16.1
+  assets_audio_player: ^2.0.1+7
 
 dev_dependencies:
   flutter_test:

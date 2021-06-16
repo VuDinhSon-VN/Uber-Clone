@@ -1,6 +1,8 @@
+import 'package:UberClone/screen/vehicleInfo.dart';
 import 'package:UberClone/widget/ProgressDialog.dart';
 import 'package:UberClone/widget/TaxiButton.dart';
 import 'package:UberClone/widget/brand_color.dart';
+import 'package:UberClone/widget/globalvariable.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -61,7 +63,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
     // check if user registration is successful
     if(user != null){
       print("regitstter user");
-      DatabaseReference newUserRef = FirebaseDatabase.instance.reference().child('users/${user.uid}');
+      DatabaseReference newUserRef = FirebaseDatabase.instance.reference().child('drivers/${user.uid}');
 
       //Prepare data to be saved on users table
       Map userMap = {
@@ -71,10 +73,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
       };
 
       newUserRef.set(userMap);
-      print("newUserRef.set(userMap)");
-      //Take the user to the mainPage
-      Navigator.pushNamedAndRemoveUntil(context, LoginPage.id, (route) => false);
-      print("pushNamedAndRemoveUntil");
+
+      currentFirebaseUser = user;
+
+      //Take the user to the register vehicleInfo
+      Navigator.pushNamed(context, VehicleInfo.id);
     }
   }
 

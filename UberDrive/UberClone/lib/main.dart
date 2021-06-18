@@ -18,12 +18,12 @@ Future<void> main() async {
         ? const FirebaseOptions(
             googleAppID: '1:297855924061:ios:c6de2b69b03a5be8',
             gcmSenderID: '297855924061',
-            databaseURL: 'https://flutterfire-cd2f7.firebaseio.com',
+            databaseURL: 'https://flutterfire-.firebaseio.com',
           )
         : const FirebaseOptions(
             googleAppID: '1:411398645140:android:f3a07951d7f28cc5a1db81',
             apiKey: 'AIzaSyDAMGWtwQBxdv0VVG1RtrXctNKaz-t8MOY',
-            databaseURL: 'https://uberclone-c7b2e.firebaseio.com',
+            databaseURL: 'https://uberclone-.firebaseio.com',
           ),
   );
   print(Platform.operatingSystem);
